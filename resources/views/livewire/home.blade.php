@@ -1,0 +1,109 @@
+<div>
+    <div class="main-content app-content">
+        <div class="container-fluid page-container main-body-container">
+
+            <!-- Start::page-header -->
+            <div class="page-header-breadcrumb mb-3">
+                <div class="d-flex align-center justify-content-between flex-wrap gap-1">
+                    <h1 class="page-title fw-medium fs-18 mb-0">Dashboard {{ $user->name }}</h1>
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:void(0);">Dashboards</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Home</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- End::page-header -->
+
+            <!-- Start:: row-1 -->
+            <div class="row">
+                @if($user->hasRole('user'))
+                    <div class="col-12 mb-4">
+                        <div class="card custom-card">
+                            <div class="card-body">
+                                <p class="mb-1"><strong>Nama:</strong> {{ $user->name }}</p>
+                                <p class="mb-1"><strong>Email:</strong> {{ $user->email }}</p>
+                                <p class="mb-0"><strong>Role:</strong> {{ $user->roles->first()->name ?? 'N/A' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                <div class="col-xxl-6">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card custom-card dashboard-main-card primary">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h5 class="fw-semibold">$43,038.00</h5>
+                                            <span class="d-block fs-12 text-muted">Total Sales</span>
+                                        </div>
+                                        <div>
+                                            <span class="avatar avatar-lg bg-primary-transparent svg-primary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 22h14a2 2 0 0 0 2-2V9a1 1 0 0 0-1-1h-3v-.777c0-2.609-1.903-4.945-4.5-5.198A5.005 5.005 0 0 0 7 7v1H4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2zm12-12v2h-2v-2h2zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v1H9V7zm-2 3h2v2H7v-2z"></path></svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card custom-card dashboard-main-card secondary">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h5 class="fw-semibold">$28,346.00</h5>
+                                            <span class="d-block fs-12 text-muted">Total Expenses</span>
+                                        </div>
+                                        <div>
+                                            <span class="avatar avatar-lg bg-secondary-transparent svg-secondary">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 12v6a1 1 0 0 1-2 0V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v14c0 1.654 1.346 3 3 3h14c1.654 0 3-1.346 3-3v-6h-2zm-6-1v2H6v-2h8zM6 9V7h8v2H6zm8 6v2h-3v-2h3z"></path></svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card custom-card dashboard-main-card warning">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h5 class="fw-semibold">1,29,368</h5>
+                                            <span class="d-block fs-12 text-muted">Total Visitors</span>
+                                        </div>
+                                        <div>
+                                            <span class="avatar avatar-lg bg-warning-transparent svg-warning">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"></path></svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="card custom-card dashboard-main-card success">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <h5 class="fw-semibold">35,367</h5>
+                                            <span class="d-block fs-12 text-muted">Total Orders</span>
+                                        </div>
+                                        <div>
+                                            <span class="avatar avatar-lg bg-success-transparent svg-success">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="17.5" cy="19.5" r="1.5"></circle></svg>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End:: row-1 -->
+
+        </div>
+    </div>
+</div>
