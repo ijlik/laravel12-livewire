@@ -11,6 +11,9 @@ use App\Livewire\Home;
 use App\Livewire\Admin\Users\Index as UsersIndex;
 use App\Livewire\Admin\Users\Create as UsersCreate;
 use App\Livewire\Admin\Users\Edit as UsersEdit;
+use App\Livewire\Admin\Rbac\ManageRoles;
+use App\Livewire\Admin\Rbac\ManagePermissions;
+use App\Livewire\Admin\Rbac\RolePermissionMatrix;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -64,6 +67,13 @@ Route::middleware('auth')->group(function () {
             Route::get('/users', UsersIndex::class)->name('users.index');
             Route::get('/users/create', UsersCreate::class)->name('users.create');
             Route::get('/users/{user}/edit', UsersEdit::class)->name('users.edit');
+
+            // RBAC Management
+            Route::prefix('rbac')->name('rbac.')->group(function () {
+                Route::get('/roles', ManageRoles::class)->name('roles');
+                Route::get('/permissions', ManagePermissions::class)->name('permissions');
+                Route::get('/matrix', RolePermissionMatrix::class)->name('matrix');
+            });
         });
     });
 });

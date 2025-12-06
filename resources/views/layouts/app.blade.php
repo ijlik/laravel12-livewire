@@ -51,6 +51,16 @@
 
     <link rel="stylesheet" href="/assets/libs/toastify-js/src/toastify.css">
 
+    <!-- Custom Sidebar Styles -->
+    <style>
+        .slide-menu .side-menu__item.active {
+            color: #fff !important;
+        }
+        .slide-menu .side-menu__item.active i {
+            color: #fff !important;
+        }
+    </style>
+
     @livewireStyles
 
 </head>
